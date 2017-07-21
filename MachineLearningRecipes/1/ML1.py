@@ -1,5 +1,7 @@
-import pip
-installed_packages = pip.get_installed_distributions()
-installed_packages_list = sorted(["%s==%s" % (i.key, i.version)
-     for i in installed_packages])
-print(installed_packages_list)
+from sklearn import tree
+
+features = [[140,1],[130,1],[150,0],[170,0]]
+labels = [0,0,1,1]
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+clf.predict([[160,1]])
